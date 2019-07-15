@@ -1,34 +1,15 @@
 package app;
 
-class Printer {
-    public void print() {
-        System.out.println("基本功能：打印");
-    }
+interface Choices {
+    int YES = 1;
+    int NO = 2;
 }
-
-class ColorPrinter extends Printer{
-    @Override
-    public void print() {
-        System.out.println("可以打印彩色纸");
-    }
-}
-
-class OldPrinter extends Printer {
-    @Override
-    public void print() {
-        System.out.println("只能打印黑色纸");
-    }
-}
-
 public class App {
+
     public static void main(String[] args) throws Exception {
-        Printer printer = new Printer();
-        printer.print();
-
-        ColorPrinter colorPrinter = new ColorPrinter();
-        colorPrinter.print();
-
-        OldPrinter oldPrinter = new OldPrinter();
-        oldPrinter.print();
+        System.out.println("Choices.YES = " + Choices.YES);
+        System.out.println("Choices.NO = " + Choices.NO);
+        Choices.NO = 9;
+        System.out.println("Choices.NO = " + Choices.NO);
     }
 }
